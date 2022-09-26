@@ -32,7 +32,9 @@ function Users() {
     setDeleteItemId();
     const response = await ApiService.users.delete(id);
     if (response.status === 200) {
-      setData(data.filter((item) => item.id !== id));
+      const dt = data.filter((item) => item.id !== id);
+      setData(dt);
+      setFilteredData(dt);
     }
   };
 
